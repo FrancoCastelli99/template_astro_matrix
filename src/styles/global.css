@@ -1,0 +1,288 @@
+/* Reset and Base Styles */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000;
+    color: #00ff00;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Scan Line Animation */
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Header */
+header {
+    background-color: #000;
+    border-bottom: 1px solid #00ff00;
+    padding: 1rem 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #00cc00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Matrix Code Effect */
+.code-matrix {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.code-matrix p {
+    font-size: 1rem;
+    color: #00ff00;
+    white-space: nowrap;
+    animation: scroll-code 10s linear infinite;
+}
+
+@keyframes scroll-code {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    border-top: 1px solid #00ff00;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #00ff00;
+}
+
+.glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+    }
+    25% {
+        text-shadow: -2px -2px 0 #ff00ff, 2px 2px 0 #00ffff;
+    }
+    50% {
+        text-shadow: 2px -2px 0 #ff00ff, -2px 2px 0 #00ffff;
+    }
+    75% {
+        text-shadow: -2px 2px 0 #ff00ff, 2px -2px 0 #00ffff;
+    }
+    100% {
+        text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+    }
+}
+
+
+.terminal {
+    background-color: #000;
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    font-family: 'Roboto Mono', monospace;
+    color: #00ff00;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Game Container */
+.game-container {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+#game {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #00ff00;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Hacker Character */
+#hacker {
+    width: 40px;
+    height: 40px;
+    background-color: #00ff00;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Obstacle */
+#obstacle {
+    width: 20px;
+    height: 40px;
+    background-color: #ff00ff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -20px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+/* Jump Animation */
+.jump {
+    animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 100px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+#hacker {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/pngegg.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}
+
+#obstacle {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/cokpng.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: moveObstacle 2s linear infinite;
+}
+
+.neon-border {
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    }
+} 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .code-matrix {
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,29 @@
+---
+// src/pages/index.astro
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+	<h1 class="glitch">Welcome to the Grid</h1>
+    <p>You are now entering a digital frontier. The future is green.</p>
+    <div class="code-matrix">
+        <p>01010100 01101000 01100101 00100000 01001101 01100001 01110100 01110010 01101001 01111000</p>
+    </div>
+	
+	<!-- Dino Game Container -->
+	<div class="game-container">
+		<div id="game">
+			<div id="hacker"></div>
+			<div id="obstacle"></div>
+		</div>
+		<p>Press SPACE to jump!</p>
+	</div>
+
+	<div class="terminal neon-border">
+		<p>> System initialized...</p>
+		<p>> Welcome, User.</p>
+		<p>> Type <span class="blink">_</span></p>
+	</div>
+
+</BaseLayout>
