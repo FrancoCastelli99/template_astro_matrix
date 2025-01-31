@@ -5,25 +5,77 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-	<h1 class="glitch">Welcome to the Grid</h1>
-    <p>You are now entering a digital frontier. The future is green.</p>
+	<h1 class="glitch">Welcome to the Matrix</h1>
+    <p>You are now entering a digital frontier. Less_Is_More.</p>
     <div class="code-matrix">
         <p>01010100 01101000 01100101 00100000 01001101 01100001 01110100 01110010 01101001 01111000</p>
     </div>
 	
 	<!-- Dino Game Container -->
-	<div class="game-container">
+	<!-- <div class="game-container">
 		<div id="game">
 			<div id="hacker"></div>
 			<div id="obstacle"></div>
 		</div>
 		<p>Press SPACE to jump!</p>
-	</div>
+	</div> -->
 
-	<div class="terminal neon-border">
+	<!-- <div class="terminal neon-border">
 		<p>> System initialized...</p>
 		<p>> Welcome, User.</p>
 		<p>> Type <span class="blink">_</span></p>
+	</div> -->
+
+	<div class="terminal">
+		<p class="welcome-message">> Welcome, Recruiter. Type "help" for a list of commands.</p>
+		<div class="input-container">
+			<span class="prompt">></span>
+			<input type="text" id="command-input" />
+		</div>
+		<div id="output"></div>
 	</div>
+
+	<div class="skills-grid">
+		<div class="skill">
+			<span>JavaScript</span>
+			<div class="progress-bar" style="width: 90%;"></div>
+		</div>
+		<div class="skill">
+			<span>React</span>
+			<div class="progress-bar" style="width: 85%;"></div>
+		</div>
+		<div class="skill">
+			<span>Node.js</span>
+			<div class="progress-bar" style="width: 80%;"></div>
+		</div>
+		<!-- Add more skills -->
+	</div>
+
+	<div class="project-showcase">
+		<div class="project">
+			<h3>Matrix Portfolio</h3>
+			<p>A futuristic portfolio inspired by the Matrix.</p>
+			<a href="#" class="project-link">View Project</a>
+		</div>
+		<div class="project">
+			<h3>Dino Game</h3>
+			<p>A Matrix-themed version of the Chrome Dino Game.</p>
+			<a href="#" class="project-link">View Project</a>
+		</div>
+		<!-- Add more projects -->
+	</div>
+
+	<button id="download-resume">Download Resume</button>
+	<p id="download-status"></p>
+
+	<form id="contact-form">
+		<input type="text" id="name" placeholder="Your Name" required />
+		<input type="email" id="email" placeholder="Your Email" required />
+		<textarea id="message" placeholder="Your Message" required></textarea>
+		<button type="submit">Send Message</button>
+	</form>
+	<p id="form-status"></p>
+	
+
 
 </BaseLayout>
